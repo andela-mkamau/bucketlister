@@ -2,4 +2,5 @@ from django.apps import AppConfig
 
 
 class BlisterConfig(AppConfig):
-    name = 'blister'
+    name = 'bucketlister.blister'
+    verbose_name = 'blister'

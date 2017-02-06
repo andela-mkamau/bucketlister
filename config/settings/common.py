@@ -46,7 +46,7 @@ THIRD_PARTY_APPS = (
 LOCAL_APPS = (
     # custom users app
     'bucketlister.users.apps.UsersConfig',
-    # Your stuff: custom apps go here
+    'bucketlister.blister.apps.AppConfig',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
