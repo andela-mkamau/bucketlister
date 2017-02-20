@@ -3,6 +3,16 @@ from django.db import models
 from .behaviours import Timestampable
 
 
+class Tag(Timestampable):
+    '''
+    A Tag is a label to used for identification purposes
+    '''
+    name = models.CharField(max_length=12)
+
+    def __repr__(self):
+        return "Tag {}".format(self.name)
+
+
 class Bucketlist(Timestampable):
     '''
     A Bucketlist is a collections of Items to be done by the User
@@ -43,11 +53,3 @@ class Item(Timestampable):
     def __repr__(self):
         return "Item {}".format(self.name)
 
-class Tag(Timestampable):
-    '''
-    A Tag is a label to used for identification purposes
-    '''
-    name = models.CharField(max_length=12)
-
-    def __repr__(self):
-        return "Tag {}".format(self.name)
