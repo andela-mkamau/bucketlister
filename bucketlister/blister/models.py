@@ -16,11 +16,14 @@ class Bucketlist(Timestampable):
     privacy = models.BooleanField(default=False)
     tags = models.ManyToManyField(Tag, related_name='tags')
 
+    def __repr__(self):
+        return "Bucketlist {}".format(self.name)
+
 
 ITEM_PRIORITY = (
     ('high', 'high'),
     ('normal', 'normal'),
-    ('low', 'low')
+    ('low', 'low'),
 )
 
 
@@ -37,9 +40,14 @@ class Item(Timestampable):
                                    related_name='items')
     tags = models.ManyToManyField(Tag, related_name='tags')
 
+    def __repr__(self):
+        return "Item {}".format(self.name)
 
 class Tag(Timestampable):
     '''
     A Tag is a label to used for identification purposes
     '''
     name = models.CharField(max_length=12)
+
+    def __repr__(self):
+        return "Tag {}".format(self.name)
