@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from ..models import Bucketlist, Tag
+from ..models import Bucketlist, Tag, Item
 
 
 class BucketlistSerializer(serializers.ModelSerializer):
@@ -20,4 +20,14 @@ class TagSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Tag
+        fields = '__all__'
+
+
+class ItemSerializer(serializers.ModelSerializer):
+    """
+    Item serializer
+    """
+
+    class Meta:
+        model = Item
         fields = '__all__'
