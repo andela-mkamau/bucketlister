@@ -24,7 +24,7 @@ class Bucketlist(Timestampable):
     due_date = models.DateTimeField()
     # whether it can be viewed bu other Users
     privacy = models.BooleanField(default=False)
-    tags = models.ManyToManyField(Tag, related_name='tags')
+    tags = models.ManyToManyField(Tag, related_name='bucketlist_tags')
 
     def __repr__(self):
         return "Bucketlist {}".format(self.name)
@@ -48,7 +48,7 @@ class Item(Timestampable):
                                 choices=ITEM_PRIORITY)
     bucketlist = models.ForeignKey(Bucketlist, on_delete=models.CASCADE,
                                    related_name='items')
-    tags = models.ManyToManyField(Tag, related_name='tags')
+    tags = models.ManyToManyField(Tag, related_name='item_tags')
 
     def __repr__(self):
         return "Item {}".format(self.name)
